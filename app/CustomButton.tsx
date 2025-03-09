@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#007AFF", // Default color, can be overridden with style prop
+    backgroundColor: "#007AFF", 
     paddingHorizontal: 24,
     paddingVertical: 10,
   },

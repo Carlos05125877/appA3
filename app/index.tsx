@@ -1,3 +1,3 @@
-import LoginScreen from "./LoginScreen";
+import SingUpScreen from "./SignUpScreen";
 
-export default LoginScreen;
+export default SingUpScreen;

@@ -4,9 +4,6 @@ import {
   StyleSheet,
   Image,
   Text,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
 } from "react-native";
 import InputField from "./InputField";
 import CustomButton from "./CustomButton";

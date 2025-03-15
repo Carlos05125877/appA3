@@ -2,20 +2,10 @@ import * as React from "react";
 import { View, StyleSheet, Image, Text } from "react-native";
 import ProgressBar from "./ProgressBar";
 import HomeSelect from "./HomeSelect";
-import { NavigationProps } from "./NavigationTypes";
+import { useRouter } from "expo-router";
 
-function HomeScreen({ navigation }: NavigationProps) {
-  const handleSkillPress = (
-    skillName: string,
-    skillImage: string,
-    skillCategory: string
-  ) => {
-    navigation.navigate("SkillDetail", {
-      skillName,
-      skillImage,
-      skillCategory,
-    });
-  };
+const HomeScreen: React.FC = () => {
+  const router = useRouter();
 
   return (
     <View style={styles.container}>

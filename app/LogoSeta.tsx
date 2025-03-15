@@ -1,14 +1,20 @@
 import React from "react";
-import { Image, StyleSheet } from "react-native";
+import { Image, StyleSheet, TouchableOpacity } from "react-native";
 
-const LogoSeta: React.FC = () => {
+interface LogoSetaProps {
+  onPress: () => void;
+}
+
+const LogoSeta: React.FC<LogoSetaProps> = ({ onPress }) => {
   return (
+    <TouchableOpacity onPress={onPress}>
     <Image
     source={require('../assets/images/Seta.png')}
       style={styles.LogoSeta}
       resizeMode="contain"
       accessibilityLabel="LogoSeta"
     />
+    </TouchableOpacity>
   );
 };
 

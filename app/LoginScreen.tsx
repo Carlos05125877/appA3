@@ -1,17 +1,20 @@
 import React from "react";
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import Logo from "./Logo";
 import InputField from "./InputField";
 import GoogleButton from "./GoogleButton";
 import ActionButton from "./ActionButton";
+import { useRouter } from "expo-router";
 
 const LoginScreen: React.FC = () => {
+  const router = useRouter();
+
   return (
     <View style={styles.container}>
       <StatusBar style="dark" backgroundColor="#87CEEB" />
       <View style={styles.content}>
-        
+
         <Logo />
 
         <View style={styles.loginText}>
@@ -30,24 +33,24 @@ const LoginScreen: React.FC = () => {
 
         <GoogleButton />
 
-        <ActionButton title="Acessar" />
+        <ActionButton onPress={() => router.push('/HomeScreen')} title="Acessar" />
 
         <View style={styles.forgotPassword}>
           <Text style={styles.forgotPasswordText}>Esqueceu senha</Text>
         </View>
 
-        <View style={styles.register}>
+        <TouchableOpacity onPress={() => router.push('/SignUpScreen')}>
           <Text style={styles.registerText}>Cadastrar</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  
+
   container: {
-    
+
     display: "flex",
     justifyContent: "center",
     alignItems: "flex-start",
@@ -87,7 +90,6 @@ const styles = StyleSheet.create({
     fontFamily: "Inter",
     fontSize: 12,
   },
-  register: {},
   registerText: {
     color: "#333",
     fontFamily: "Inter",

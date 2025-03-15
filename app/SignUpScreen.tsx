@@ -1,74 +1,58 @@
 import * as React from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-} from "react-native";
+import { View, StyleSheet, Text} from "react-native";
 import InputField from "./InputField";
-import CustomButton from "./CustomButton";
 import ActionButton from "./ActionButton";
 import LogoSeta from "./LogoSeta";
 import LogoMaoP from "./LogoMaoP";
+import { useRouter } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 
 const SignUpScreen = () => {
-  const [childName, setChildName] = React.useState("");
-  const [birthDate, setBirthDate] = React.useState("");
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
 
-  const handleSignUp = () => {
-   
-    console.log({ childName, birthDate, email, password });
-  };
-
+  const router = useRouter();
   return (
+    <View style={styles.container}>
+      <StatusBar style="dark" backgroundColor="#87CEEB" />
 
-
-      <View style={styles.container}>
-        
-          
-            <View style={styles.logoContainer}>
-            <LogoSeta />
-            <LogoMaoP />
-            </View>
-            <View style={styles.content}>
-          
-            <View style={styles.titleContainer}>
-              <Text style={styles.title}>Crie sua Conta</Text>
-            </View>
-            <View style={styles.inputContainer}>
-              <InputField
-                label="Nome da Criança" inputType="text" secureTextEntry={false}
-                
-              />
-
-              <InputField
-                label="Data de Nascimento" inputType="date" secureTextEntry={false}
-                
-              />
-
-              <InputField
-                label="Email" inputType="email" secureTextEntry={false}
-                
-                
-              />
-
-              <InputField
-                label="Senha" inputType="password" secureTextEntry={true}
-                
-                
-              />
-            </View>
-
-            <ActionButton title="Cadastrar" />
-
-
-        
-        </View>
+      <View style={styles.logoContainer}>
+        <LogoSeta onPress={() => router.push('/LoginScreen')} />
+        <LogoMaoP />
       </View>
-);
+      <View style={styles.content}>
+
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>Crie sua Conta</Text>
+        </View>
+        <View style={styles.inputContainer}>
+          <InputField
+            label="Nome da Criança" inputType="text" secureTextEntry={false}
+
+          />
+
+          <InputField
+            label="Data de Nascimento" inputType="date" secureTextEntry={false}
+
+          />
+
+          <InputField
+            label="Email" inputType="email" secureTextEntry={false}
+
+
+          />
+
+          <InputField
+            label="Senha" inputType="password" secureTextEntry={true}
+
+
+          />
+        </View>
+        <ActionButton title="Cadastrar" />
+      </View>
+    </View>
+
+
+  );
 };
 
 const styles = StyleSheet.create({
@@ -90,7 +74,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    
+
   },
   inputContainer: {
     width: "100%",
@@ -114,8 +98,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "700",
     textAlign: "center",
-    fontFamily: "Open Sans, -apple-system, Roboto, Helvetica, sans-serif",
-    color: "rgba(51, 51, 51, 1)",
+    fontFamily: "Inter",
+    
   },
 });
 

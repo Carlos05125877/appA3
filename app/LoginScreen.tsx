@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from 'expo-status-bar';
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import Logo from "./Logo";
 import InputField from "./InputField";
 import GoogleButton from "./GoogleButton";

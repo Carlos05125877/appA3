@@ -22,84 +22,78 @@ const SignUpScreen = () => {
   const [password, setPassword] = React.useState("");
 
   const handleSignUp = () => {
-    // Handle sign up logic here
+   
     console.log({ childName, birthDate, email, password });
   };
 
   return (
 
 
-        <View style={styles.container}>
-          <View style={styles.content}>
-            
-              <View style={styles.logoContainer}>
-              <LogoSeta />
-              <LogoMaoP />
-              
-              </View>
+      <View style={styles.container}>
+        
+          
+            <View style={styles.logoContainer}>
+            <LogoSeta />
+            <LogoMaoP />
+            </View>
+            <View style={styles.content}>
+          
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>Crie sua Conta</Text>
+            </View>
+            <View style={styles.inputContainer}>
+              <InputField
+                label="Nome da Criança" inputType="text" secureTextEntry={false}
+                
+              />
 
-            
-              <View style={styles.titleContainer}>
-                <Text style={styles.title}>Crie sua Conta</Text>
-              </View>
-              <View style={styles.inputContainer}>
-                <InputField
-                  label="Nome da Criança" inputType="text" secureTextEntry={false}
-                  
-                />
+              <InputField
+                label="Data de Nascimento" inputType="date" secureTextEntry={false}
+                
+              />
 
-                <InputField
-                  label="Data de Nascimento" inputType="date" secureTextEntry={false}
-                  
-                />
+              <InputField
+                label="Email" inputType="email" secureTextEntry={false}
+                
+                
+              />
 
-                <InputField
-                  label="Email" inputType="email" secureTextEntry={false}
-                  
-                  
-                />
+              <InputField
+                label="Senha" inputType="password" secureTextEntry={true}
+                
+                
+              />
+            </View>
 
-                <InputField
-                  label="Senha" inputType="password" secureTextEntry={true}
-                  
-                  
-                />
-              </View>
-              <ActionButton title="Cadastrar" />
-          </View>
+            <ActionButton title="Cadastrar" />
+
+
+        
         </View>
-  );
+      </View>
+);
 };
 
 const styles = StyleSheet.create({
 
   container: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    paddingTop: 40,
-    paddingRight: 55,
-    paddingBottom: 200,
-    paddingLeft: 55,
+    width: "100%",
     backgroundColor: "#87CEEB",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    paddingTop: 50,
+    paddingBottom: 100,
+    paddingLeft: 30,
+    paddingRight: 30,
   },
   logoContainer: {
+    width: "100%",
     display: "flex",
     flexDirection: "row",
-    alignItems: "center",
     justifyContent: "space-between",
-    width: "100%",
+    alignItems: "center",
     
-  },
-  smallLogo: {
-    width: 40,
-    height: 40,
-    marginTop: "auto",
-    marginBottom: "auto",
-  },
-  largeLogo: {
-    width: 70,
-    height: 63, 
   },
   inputContainer: {
     width: "100%",
